@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- <a href='https://pngtree.com/so/mobile'>mobile png from pngtree.com/</a> -->
+    <title>pd</title>
+    <style>
+        *{
+            padding: 0;
+            scroll-behavior: smooth;
+            
+             
+        }
+        .container{
+   
+            height: 1000px;
+            border-radius: 10px;
+            max-width: 480px;
+            width: 450px;
+            transform: translate(98%);
+            overflow: hidden;
+            top: 30%;
+            position: absolute;
+        }
+        ul li{
+            float: left;
+           
+          
+            list-style: none;
+        }
+        .logo{
+            position: absolute;
+            right: -1%;
+            top: -1%;
+        }
+        .icon{
+            position: absolute;
+            left: 5%;
+        }
+        .calculated-data-analysis{
+            position: absolute;
+            text-align: center;
+            align-items: center;
+            translate: 8%;
+            margin-top: 15rem;
+            margin: 1rem;
+        }
+        .available-bal{
+            position: absolute;
+            text-align: center;
+            translate: 34%;
+            margin-top: 20rem;
+            padding: 0 1rem;
+
+        }
+        form{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 2rem;
+           
+        }
+        form input{
+            padding: 10px;
+            width: 100%;
+            margin-top: 4rem;
+        }
+        form input::placeholder{
+            text-align: center;
+            position: absolute;
+            padding: 0 3.5rem;
+            
+        }
+        button{
+            margin-top: 8rem;
+            width: 80%;
+            padding: 10px;
+            background: rgb(71, 71, 192);
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        button:hover{
+            background: gray;
+        }
+        button:focus{
+            background: rgb(167, 53, 53);
+        }
+        .gbs{
+            color: red;
+        }
+        table{
+            width: 100%;
+            background-color: white;
+            padding: 0 rem;
+            border-radius: 10px;
+            margin-top: 6rem;
+            
+            
+        }
+        table tr td{
+            padding: 10px;
+        }
+        .bal{
+            color: red;
+        }
+        .terms{
+            margin-top: 10rem;
+        }
+        .data{
+            color: blue;
+        }
+        .analysis{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-top: 4rem;
+        }
+        .Withdraw{
+            position: absolute;
+            margin-top: 10rem !important;
+        }
+        .Withdraw-option{
+           
+            height: fit-content;
+        }
+        body{
+            background: whitesmoke;
+        }
+        img{
+            width: 100%;
+        }
+        #loader img{
+            width: 400px;
+           
+        }
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo img{
+            position: relative;
+            width: 100px;
+            top: -2%;
+        }
+        .icon i{
+            font-size: 38px;
+        }
+  
+
+    </style>
+</head>
+<body>
+    <div id="loader">
+        <img src="images/WhatsApp Image 2023-01-17 at 11.30.36.png" alt="Logo">
+        
+    </div>
+    <div id="main-content">
+        <!-- Main website content  -->
+        <header>
+            <div class="wrapper">
+                <img src="images/—Pngtree—mobile phone png smartphone camera_6067590-Recovered.png" alt="">
+              
+                <div class="container">
+                    <ul>
+                        <li class="icon">
+                            <i class='bx bx-menu'></i> </li>
+                        <li class="logo"><img src="images/WhatsApp Image 2023-01-17 at 11.30.36.png" alt=""></li>
+                    </ul>
+                    <div>
+                        <div class="calculated-data-analysis">
+                            <h2 class="analysis">DATA ANALYSIS</h2>
+                            <div class="table">
+                                <table>
+                                    <tr>
+                                        <td>Virtual data</td>
+                                        <td>Current balance</td>
+                                        <td>Amount remaining</td>
+                                    </tr>
+                                    <tr class="data">
+                                        <td>100.00</td>
+                                        <td>200.00</td>
+                                        <td>300.00</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="available-bal">
+                        <h2 class="analysis">AVAILABLE BALANCE</h2>
+                        <h2 class="bal">0.00USD</h2>
+                        <div class="Withdraw-option">
+                            <h2 class="withdraw"> WITHDRAW OPTION</h2>
+                            <div class="form">
+                                <form action="">
+                                    <input type="text" placeholder="Enter Amount in USD">
+                                    <button>WITHDRAW</button>
+                                </form>
+                            </div>
+                            <div class="terms">
+                                Terms & conditions
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </header>
+        
+        
+    </div>
+    
+</body>
+<script>
+    setTimeout(function(){
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("main-content").style.display = "block";
+    }, 8000);
+    </script>
+</html>
