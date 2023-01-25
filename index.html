@@ -5,226 +5,185 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-    <!-- <a href='https://pngtree.com/so/mobile'>mobile png from pngtree.com/</a> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+    <!-- python link -->
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css"/>
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <!--End python link -->
+    <py-env>
+        - matplotlib
+    </py-env>
     <title>pd</title>
-    <style>
-        *{
-            padding: 0;
-            scroll-behavior: smooth;
-            
-             
-        }
-        .container{
-   
-            height: 1000px;
-            border-radius: 10px;
-            max-width: 480px;
-            width: 450px;
-            transform: translate(98%);
-            overflow: hidden;
-            top: 30%;
-            position: absolute;
-        }
-        ul li{
-            float: left;
-           
-          
-            list-style: none;
-        }
-        .logo{
-            position: absolute;
-            right: -1%;
-            top: -1%;
-        }
-        .icon{
-            position: absolute;
-            left: 5%;
-        }
-        .calculated-data-analysis{
-            position: absolute;
-            text-align: center;
-            align-items: center;
-            translate: 8%;
-            margin-top: 15rem;
-            margin: 1rem;
-        }
-        .available-bal{
-            position: absolute;
-            text-align: center;
-            translate: 34%;
-            margin-top: 20rem;
-            padding: 0 1rem;
-
-        }
-        form{
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            margin-top: 2rem;
-           
-        }
-        form input{
-            padding: 10px;
-            width: 100%;
-            margin-top: 4rem;
-        }
-        form input::placeholder{
-            text-align: center;
-            position: absolute;
-            padding: 0 3.5rem;
-            
-        }
-        button{
-            margin-top: 8rem;
-            width: 80%;
-            padding: 10px;
-            background: rgb(71, 71, 192);
-            color: white;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-        button:hover{
-            background: gray;
-        }
-        button:focus{
-            background: rgb(167, 53, 53);
-        }
-        .gbs{
-            color: red;
-        }
-        table{
-            width: 100%;
-            background-color: white;
-            padding: 0 rem;
-            border-radius: 10px;
-            margin-top: 6rem;
-            
-            
-        }
-        table tr td{
-            padding: 10px;
-        }
-        .bal{
-            color: red;
-        }
-        .terms{
-            margin-top: 10rem;
-        }
-        .data{
-            color: blue;
-        }
-        .analysis{
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            margin-top: 4rem;
-        }
-        .Withdraw{
-            position: absolute;
-            margin-top: 10rem !important;
-        }
-        .Withdraw-option{
-           
-            height: fit-content;
-        }
-        body{
-            background: whitesmoke;
-        }
-        img{
-            width: 100%;
-        }
-        #loader img{
-            width: 400px;
-           
-        }
-        #loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #fff;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .logo img{
-            position: relative;
-            width: 100px;
-            top: -2%;
-        }
-        .icon i{
-            font-size: 38px;
-        }
-  
-
-    </style>
+    <link rel="stylesheet" href="css/main.css">
 </head>
+<link rel="stylesheet" href="css/main.css">
 <body>
     <div id="loader">
         <img src="images/WhatsApp Image 2023-01-17 at 11.30.36.png" alt="Logo">
-        
     </div>
     <div id="main-content">
         <!-- Main website content  -->
         <header>
             <div class="wrapper">
                 <img src="images/—Pngtree—mobile phone png smartphone camera_6067590-Recovered.png" alt="">
-              
                 <div class="container">
-                    <ul>
-                        <li class="icon">
-                            <i class='bx bx-menu'></i> </li>
-                        <li class="logo"><img src="images/WhatsApp Image 2023-01-17 at 11.30.36.png" alt=""></li>
-                    </ul>
-                    <div>
-                        <div class="calculated-data-analysis">
-                            <h2 class="analysis">DATA ANALYSIS</h2>
-                            <div class="table">
-                                <table>
-                                    <tr>
-                                        <td>Virtual data</td>
-                                        <td>Current balance</td>
-                                        <td>Amount remaining</td>
-                                    </tr>
-                                    <tr class="data">
-                                        <td>100.00</td>
-                                        <td>200.00</td>
-                                        <td>300.00</td>
-                                    </tr>
-                                </table>
-                            </div>
+                    <div class="first-login-page">
+                              
+                        <div class="main-image">
+                            <img src="images/WhatsApp Image 2023-01-17 at 11.30.36.png" alt="Logo">
+                        
                         </div>
-                    </div>
-                    <div class="available-bal">
-                        <h2 class="analysis">AVAILABLE BALANCE</h2>
-                        <h2 class="bal">0.00USD</h2>
-                        <div class="Withdraw-option">
-                            <h2 class="withdraw"> WITHDRAW OPTION</h2>
-                            <div class="form">
-                                <form action="">
-                                    <input type="text" placeholder="Enter Amount in USD">
-                                    <button>WITHDRAW</button>
+                        <div class="sign-in">
+                            <form  name = 'sign in' onsubmit="return false" >
+                                <div id="sign-in">
+                                    <input type="text" class="userName" placeholder="UserName" />
+                                    <div class="username-error"></div>
+                                    <input class="phone-no" type="text" placeholder="Enter Your Phone No" >
+                                    <div class="phone-no-error"></div>
+                                    <input type="password" placeholder="Password" autocomplete="new-password">
+                                    <div class="instructions">
+                                        <span>FORGOT PASSWORD</span>
+                                        <span>||</span>
+                                        <span id="account">CREATE ACCOUNT</span>
+                                    </div>
+                                    <button class="sign-up-btn">SIGN UP</button>
+                                </div>
+                            </form>
+
+
+                            <div id="register">
+                                <form action="" onsubmit="return false">
+                                    <input type="text" id='firstName' placeholder="First Name" >
+                                    <div class="first-name-error"></div>
+                                    <input type="text" id='secondName' placeholder="Second Name" >
+                                    <div class="second-name-error"></div>
+                                    <input type="email" id='email' placeholder="Email Address" required>
+                                    <input type="text" id='phoneNumber' placeholder="Enter Your Phone No" >
+                                    <div class="Phone-number-error"></div>
+                                    <input type="password" id='passWord' placeholder="Password" autocomplete="new-password">
+                                    <div class="password-error"></div>
+                                    <p id="message">Password is <span id="strength"></span></p>
+                                    <input type="password" id='confirm-passWord' placeholder="Confirm Password" autocomplete="new-password" >
+                                    <div class="confirmation-error">
+                                    </div>
+                                    <div class="instructions">
+                                    <div id="input1"></div>
+                                    <div id="input2"></div>
+                                    <div id="input3"></div> 
+                                    <div id="input4"></div>
+                                    </div>
+                                    <button type='submit' class="register-btn" id="register-btn" pys-onClick="my_function">REGISTER</button>
                                 </form>
                             </div>
-                            <div class="terms">
-                                Terms & conditions
+                            
+                        </div>
+                    </div>
+                    <div class="second-page">
+                        <ul>
+                            <li class="icon">
+                                <i class='bx bx-menu'></i> </li>
+                            <li class="logo"><img src="images/WhatsApp Image 2023-01-17 at 11.30.36.png" alt=""></li>
+                        </ul>
+                        <div class="side-bar">
+                            <div class="side-bar-list">
+                                <ul>
+                                   
+                                    <li><i class='bx bxs-user-circle'></i>Profile</li>
+                                    <li><i class='bx bxs-user-account'></i>Change Phone no</li>
+                                    <li><i class='bx bx-game' ></i>Change Password</li>
+                                    <li><i class='bx bx-cog' ></i>Setting</li>
+                                    <li><i class='bx bx-signal-5'></i>Change Graph</li>
+    
+                                    <div class="close-sidebar-btn">
+                                        <i class='bx bx-x' id="close-window"></i>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="calculated-data-analysis">
+                                <div class="user-logged-in">
+                                    welcome, <span id="profile"></span>
+                                </div>
+                                <h2 class="analysis">DATA ANALYSIS</h2>
+                                <div class="data-graph" id="data-graph">
+                                </div>
+                                <div class="table">
+                                    <table>
+                                        <tr>
+                                            <td>Virtual data</td>
+                                            <td></td>
+                                            
+                                            <td>Available Bal</td>
+                                        </tr>
+                                        <tr class="data">
+                                            <td>100.00</td>
+                                            <td><i class='bx bx-refresh'></i>  </td>
+                                            
+                                            <td>300.00</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="available-bal">
+                            <h2 class="analysis">AVAILABLE BALANCE</h2>
+                            <h2 class="bal">220.00USD</h2>
+                            <div class="Withdraw-option">
+                                <h2 class="withdraw"> WITHDRAW OPTION</h2>
+                                <span><input type="radio"><i class='bx bxl-paypal' ></i>Paypal</span>
+                                <span><input type="radio"><i class='bx bxl-gmail'></i>Mpesa</span>
+                                <div class="form">
+                                    <form action="" onsubmit="return false">
+                                        <input type="text" placeholder="Enter Amount in USD">
+                                        <button>WITHDRAW</button>
+                                    </form>
+                                </div>
+                                <div class="terms">
+                                    Terms & conditions
+                                </div>
                             </div>
                         </div>
                     </div>
-                    
+                </div>
                 </div>
             </div>
         </header>
-        
-        
     </div>
     
 </body>
-<script>
-    setTimeout(function(){
-      document.getElementById("loader").style.display = "none";
-      document.getElementById("main-content").style.display = "block";
-    }, 8000);
-    </script>
+<link rel="stylesheet" href="css/main.css">
+<script src="js/main.js"></script>
+
+<py-script  output="data-graph">
+    import matplotlib.pyplot as plt
+    
+    fig, ax = plt.subplots()
+
+     # x axis 
+    x = ["Mon", "Tue", "Wed", "Thur", "Fri", "Sat", "Sun"]
+
+     # y axis 
+    y = [10, 5, 9, 7, 2, 5, 3]
+
+    plt.plot(x, y, marker='o', linestyle='-', color='b')
+
+     # Naming the x-label 
+    plt.xlabel('Megabytes')
+
+    # Naming the y-label 
+    plt.ylabel('USD')
+
+    # Naming the title of the plot 
+    plt.title('Megabytes vs USD')
+    fig
+
+</py-script> 
 </html>
+
+
