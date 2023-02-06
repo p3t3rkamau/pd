@@ -12,19 +12,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
     <!-- python link -->
-    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css"/>
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <!-- <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css"/>
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script> -->
     <!--End python link -->
-    <py-env>
+
+    <!-- chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <!-- end of chart.js library -->
+    
+    <!-- jquery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <!-- jquery library -->
+
+
+    <!-- <py-env>
         - matplotlib
-    </py-env>
+    </py-env> -->
     <title>pd</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 <link rel="stylesheet" href="css/main.css">
 <body>
     <div id="loader">
-        <img src="images/WhatsApp Image 2023-01-17 at 11.30.36.png" alt="Logo">
+        <img src="images/1.jpg" alt="Logo">
     </div>
     <div id="main-content">
         <!-- Main website content  -->
@@ -35,7 +45,7 @@
                     <div class="first-login-page">
                               
                         <div class="main-image">
-                            <img src="images/WhatsApp Image 2023-01-17 at 11.30.36.png" alt="Logo">
+                            <img src="images/1.jpg" alt="Logo">
                         
                         </div>
                         <div class="sign-in">
@@ -77,7 +87,7 @@
                                     <div id="input3"></div> 
                                     <div id="input4"></div>
                                     </div>
-                                    <button type='submit' class="register-btn" id="register-btn" pys-onClick="my_function">REGISTER</button>
+                                    <button type='submit' class="register-btn" id="register-btn">REGISTER</button>
                                 </form>
                             </div>
                             
@@ -93,11 +103,23 @@
                             <div class="side-bar-list">
                                 <ul>
                                    
-                                    <li><i class='bx bxs-user-circle'></i>Profile</li>
-                                    <li><i class='bx bxs-user-account'></i>Change Phone no</li>
-                                    <li><i class='bx bx-game' ></i>Change Password</li>
-                                    <li><i class='bx bx-cog' ></i>Setting</li>
-                                    <li><i class='bx bx-signal-5'></i>Change Graph</li>
+                                    <div id="hide">
+                                        <li><i class='bx bxs-user-circle'></i>Profile</li>
+                                        <li><i class='bx bxs-user-account'></i>Change Phone no</li>
+                                        <li><i class='bx bx-game' ></i>Change Password</li>
+                                        <li><i class='bx bx-cog' ></i>Setting</li>
+                                        <li class="change-graph"><i class='bx bx-signal-5'></i>Change Graph</li>
+                                    </div>
+                                    <div class="graph-types">
+                                        <li>Latest wifi used</li>
+                                        <li>Received vs Transmitted</li>
+                                        <li class="all-connected-wifi-data"  onclick="window.location.href='src/all wifi networks.html'";>All connected wifi's</li>
+                                        <li>Received Data</li>
+                                        <li>Line Graph</li>
+                                    </div>
+                                    <div class="back-navigation-arrow">
+                                        <i class='bx bx-left-arrow-alt'></i>
+                                    </div>
     
                                     <div class="close-sidebar-btn">
                                         <i class='bx bx-x' id="close-window"></i>
@@ -112,6 +134,13 @@
                                 </div>
                                 <h2 class="analysis">DATA ANALYSIS</h2>
                                 <div class="data-graph" id="data-graph">
+                                  <!-- graph comes here -->
+                                  <canvas id="chart"><!-- latest wifi usage which is the default--></canvas>
+                                  <div class="display-all-wifi-data">
+                                    <h1 class="table-header">Network Data</h1>
+                                    <table id="network-table"><!-- this is where all the all wifi data usage comes --></table>
+                                  </div>
+
                                 </div>
                                 <div class="table">
                                     <table>
@@ -135,7 +164,7 @@
                             <h2 class="analysis">AVAILABLE BALANCE</h2>
                             <h2 class="bal">220.00USD</h2>
                             <div class="Withdraw-option">
-                                <h2 class="withdraw"> WITHDRAW OPTION</h2>
+                                <p class="withdraw"> WITHDRAW OPTION</p>
                                 <span><input type="radio"><i class='bx bxl-paypal' ></i>Paypal</span>
                                 <span><input type="radio"><i class='bx bxl-gmail'></i>Mpesa</span>
                                 <div class="form">
@@ -159,31 +188,6 @@
 </body>
 <link rel="stylesheet" href="css/main.css">
 <script src="js/main.js"></script>
-
-<py-script  output="data-graph">
-    import matplotlib.pyplot as plt
-    
-    fig, ax = plt.subplots()
-
-     # x axis 
-    x = ["Mon", "Tue", "Wed", "Thur", "Fri", "Sat", "Sun"]
-
-     # y axis 
-    y = [10, 5, 9, 7, 2, 5, 3]
-
-    plt.plot(x, y, marker='o', linestyle='-', color='b')
-
-     # Naming the x-label 
-    plt.xlabel('Megabytes')
-
-    # Naming the y-label 
-    plt.ylabel('USD')
-
-    # Naming the title of the plot 
-    plt.title('Megabytes vs USD')
-    fig
-
-</py-script> 
 </html>
 
 

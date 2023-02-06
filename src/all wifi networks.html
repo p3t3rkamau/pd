@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        overflow: scroll;
+        scroll-behavior: smooth;
+        cursor: pointer;
+        overflow-y: scroll;
+      }
+      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+      
+      h1 {
+        text-align: center;
+        font-size: 24px;
+        color: #008080;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>Network Data</h1>
+    <table id="network-table"></table>
+    <script>
+        const table = document.getElementById("network-table");
+
+        fetch("../network_data.csv")
+        .then(response => response.text())
+        .then(data => {
+            const rows = data.split("\n");
+            const headers = rows[0].split(",");
+
+            let tableHTML = "";
+            tableHTML += "<tr>";
+            headers.forEach(header => {
+            tableHTML += `<th>${header}</th>`;
+            });
+            tableHTML += "</tr>";
+
+            for (let i = 1; i < rows.length; i++) {
+            const cells = rows[i].split(",");
+            tableHTML += "<tr>";
+            cells.forEach(cell => {
+                tableHTML += `<td>${cell}</td>`;
+            });
+            tableHTML += "</tr>";
+            }
+
+            table.innerHTML = tableHTML;
+        });
+
+    </script>
+  </body>
+</html>
