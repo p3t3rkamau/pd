@@ -49,9 +49,9 @@ ul li{
 .available-bal{
     position: absolute;
     text-align: center;
-    translate: 28%;
+    translate: 24%;
     /* padding is here */
-    margin-top: 32rem;
+    margin-top: 30rem;
     padding: 0 -20rem;
     width: 70%;
 }
@@ -63,18 +63,19 @@ form{
    
 }
 form input{
-    padding: 10px;
+    padding: 12px;
     width: 100%;
     margin-top: 4rem;
+    border-radius: 10px;
 }
 form input::placeholder{
     text-align: center;
     position: absolute;
-    padding: 0 3.5rem;
+    padding: 0 5.5rem;
     
 }
 button{
-    margin-top: 8rem;
+    margin-top: 4rem;
     width: 80%;
     padding: 10px;
     background: rgb(71, 71, 192);
@@ -91,32 +92,35 @@ button:focus{
 .gbs{
     color: red;
 }
-table{
+.table table{
     width: 100%;
     background-color: gainsboro;
     padding: 0 rem;
     border-radius: 10px;
     box-sizing: border-box;
-    position: relative;
+    position: absolute;
+    top: 80%;
 }
-table tr td{
-    padding: 20px 35px;
+.table table tr{
+    padding: 20px 30px;
+}
+.table table tr td{
+    padding: 20px 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .bal{
     color: red;
     font-family: 'Rubik Glitch', cursive;
 }
 .terms{
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 .data{
     color: blue;
 }
 .analysis{
-
     margin-top: 4rem;
-
-    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .Withdraw{
     position: absolute;
@@ -125,6 +129,7 @@ table tr td{
 }
 .Withdraw-option{
     height: 20px;
+    font-size: 15px;
     position: relative;
 }
 body{
@@ -244,13 +249,16 @@ tr td i{
 }
 .instructions{
     position: absolute;
-    top: 70%;
+    top: 74%;
     padding: .5rem .5rem;
     cursor: pointer;
+    font-size: 14px;
+    translate: 5%;
 }
 .instructions:hover{
     color: red;
 }
+
 .instructions #account:hover{
     color: blue;
 }
@@ -284,7 +292,7 @@ tr td i{
     top: 60%;
 }
 #register button{
-    translate: 16%;
+    translate: 2%;
 }
 .sign-up-btn{
     translate: 16%;
@@ -311,4 +319,56 @@ input{
 .user-logged-in{
     font-weight: 800;
 }
+canvas {
+    width: 100%;
+    height: auto;
+}
+.graph-types{
+    display: none;
+}
+.hide-list{
+    display: none;
+}
+.back-navigation-arrow{
+    color: white;
+    font-size: 28px;
+    position: absolute;
+    left: 5%;
+    display: none;
+    cursor: pointer;
+    transition: .5s;
+}
+#network-table{
+    display: none;
+    overflow: scroll;
+    overflow-x: scroll;
+    width: 100%;
+    object-fit: cover;
+    scroll-behavior: smooth;
+    padding: 0;
 
+}
+.table-header{
+    display: none;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  d, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 1px;
+}
+  
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+  
+h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #008080;
+}
