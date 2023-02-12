@@ -1,0 +1,36 @@
+# Importing necessary libraries
+import requests
+import base64
+import csv
+
+def fetch_and_write_data():
+    # URL of the file you want to read from
+    url = "https://api.github.com/repos/p3t3rkamau/pd/contents/contents/form_data.csv"
+
+    # Headers for the request
+    headers = {
+        "Authorization": "Bearer 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",
+        "Accept": "application/vnd.github+json",
+    }
+
+
+    # Make a GET request to fetch the current contents of the file
+    response = requests.get(url, headers=headers)
+
+    if response.status_code == 200:
+        data = response.json()
+        file_contents = base64.b64decode(data["content"]).decode('utf-8')
+        # Write the contents to a list of rows
+        rows = file_contents.split("\n")
+        # Open a file in write mode and write the rows to the file
+        with open("output.csv", "w", newline="") as file:
+            writer = csv.writer(file)
+            for row in rows:
+                writer.writerow(row.split(","))
+        return "Data written to file successfully"
+    else:
+        return f"Failed to fetch file contents. Response: {response.text}"
+result = fetch_and_write_data()
+print(result)
+
+

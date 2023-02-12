@@ -1,0 +1,28 @@
+import csv
+
+# Read data from output.csv file
+with open('output.csv', 'r') as file:
+    reader = csv.reader(file)
+    rows = [row for row in reader]
+
+# Create an HTML table from the data
+table = "<table>\n"
+table += "<tr>\n"
+table += "<th>First Name</th>\n"
+table += "<th>Last Name</th>\n"
+table += "<th>Email</th>\n"
+table += "<th>Phone Number</th>\n"
+table += "<th>Password</th>\n"
+table += "</tr>\n"
+for row in rows:
+    table += "<tr>\n"
+    for column in row:
+        table += f"<td>{column}</td>\n"
+    table += "</tr>\n"
+table += "</table>"
+
+# Write the HTML table to a file
+with open("table.html", "w") as file:
+    file.write(table)
+
+print("HTML table written to file successfully")

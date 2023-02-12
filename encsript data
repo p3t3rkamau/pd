@@ -1,0 +1,22 @@
+import base64
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad, unpad
+
+def encrypt_data(data, key):
+    cipher = AES.new(key, AES.MODE_CBC)
+    ciphertext = cipher.encrypt(pad(data.encode(), AES.block_size))
+    return base64.b64encode(ciphertext).decode('utf-8')
+
+def decrypt_data(encrypted_data, key):
+    encrypted_data = base64.b64decode(encrypted_data.encode('utf-8'))
+    cipher = AES.new(key, AES.MODE_CBC)
+    return unpad(cipher.decrypt(encrypted_data), AES.block_size).decode('utf-8')
+
+key = b'yoursecretkeygoeshere'
+data = 'your data to be encrypted'
+
+encrypted_data = encrypt_data(data, key)
+print(encrypted_data)
+
+decrypted_data = decrypt_data(encrypted_data, key)
+print(decrypted_data)
