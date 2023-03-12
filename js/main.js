@@ -58,87 +58,88 @@ const SignBtn = document.querySelector('.sign-in-btn');
 createAccountBtn.addEventListener('click', function (){
     signInForm.style.display = 'none'
     registerForm.style.display = 'block'
+    // window.location.href = "https://testflaskapp.vercel.app/";
 });
 
 //  password validation tester
-var password = document.getElementById('passWord');
-var border = document.getElementsByTagName('input');
-var msg = document.getElementById('message');
-var str = document.getElementById('strength');
-var confirmPassword = document.getElementById('confirm-passWord');
+// var password = document.getElementById('passWord');
+// var border = document.getElementsByTagName('input');
+// var msg = document.getElementById('message');
+// var str = document.getElementById('strength');
+// var confirmPassword = document.getElementById('confirm-passWord');
 
-password.addEventListener('input',()=>{
-if (password.value.length > 0){
-    msg.style.display = "block";
-}
-else{
-    msg.style.display = "none";
-}
-if(password.value.length < 5){
-    str.innerHTML = "weak";
-    password.style.borderColor = 'red';
-    msg.style.color = 'red';
-}
-else if(password.value.length >=6 && password.value.length< 10){
-    str.innerHTML = "medium";
-    password.style.borderColor = 'green';
-    msg.style.color = 'green';
-}
-else if(password.value.length >= 12){
-    str.innerHTML = 'strong';
-    password.style.borderColor = 'blue';
-    msg.style.color = 'blue'
-}
-});
-confirmPassword.addEventListener('click', function(){
-    msg.style.display = 'none'
-});
+// password.addEventListener('input',()=>{
+// if (password.value.length > 0){
+//     msg.style.display = "block";
+// }
+// else{
+//     msg.style.display = "none";
+// }
+// if(password.value.length < 5){
+//     str.innerHTML = "weak";
+//     password.style.borderColor = 'red';
+//     msg.style.color = 'red';
+// }
+// else if(password.value.length >=6 && password.value.length< 10){
+//     str.innerHTML = "medium";
+//     password.style.borderColor = 'green';
+//     msg.style.color = 'green';
+// }
+// else if(password.value.length >= 12){
+//     str.innerHTML = 'strong';
+//     password.style.borderColor = 'blue';
+//     msg.style.color = 'blue'
+// }
+// });
+// confirmPassword.addEventListener('click', function(){
+//     msg.style.display = 'none'
+// });
 // password tester when registering
-const RegisterButton = document.querySelector('.register-btn');
-const RegisterBTN = document.querySelector('#register-btn');
-const confirmError = document.querySelector('.confirmation-error');
-const firstName = document.querySelector('#firstName');
-const secondName = document.querySelector('#secondName');
-const phonenumber = document.querySelector('#phoneNumber');
+// const RegisterButton = document.querySelector('.register-btn');
+// const RegisterBTN = document.querySelector('#register-btn');
+// const confirmError = document.querySelector('.confirmation-error');
+// const firstName = document.querySelector('#firstName');
+// const secondName = document.querySelector('#secondName');
+// const phonenumber = document.querySelector('#phoneNumber');
 
-RegisterButton.addEventListener('click',function(){
+// RegisterButton.addEventListener('click',function(){
   
-    if(firstName.value == 0){
-        document.querySelector('.first-name-error').innerHTML = 'First Name Is Required';
-        firstName.style.borderColor = 'red';
-    }
-    else if (secondName.value == 0){
-        document.querySelector('.second-name-error').innerHTML = 'Second Name Is Required';
-        secondName.style.borderColor = 'red';
-    }
-    else if(isNaN(phonenumber.value)){
-        phonenumber.style.borderColor = 'red';
-        document.querySelector('.Phone-number-error').innerHTML = 'Enter Numeric Value Only';
-    }
-    else if(phonenumber.value.length = 0){
-        phonenumber.style.borderColor = 'red';
-        document.querySelector('.Phone-number-error').innerHTML = 'Phone Number Required';
-    }
-    else if(phonenumber.value.length < 9){
-        phonenumber.style.borderColor = 'red';
-        document.querySelector('.Phone-number-error').innerHTML = 'Number Must Be Ten Characters Long';
-    }
-    else if (password.value == 0){
-        phonenumber.style.borderColor = 'red';
-        document.querySelector('.password-error').innerHTML = 'Password Required';
-    }
-    else{RegisterBTN.addEventListener('click',function(){
-        if(password.value == confirmPassword.value){
-           return true;
-        }
-        else{
-            confirmError.innerHTML = 'Password must be the same';
-            confirmPassword.style.borderColor = 'red'
-            return false;
-        }
-        });
-    }
-});
+//     if(firstName.value == 0){
+//         document.querySelector('.first-name-error').innerHTML = 'First Name Is Required';
+//         firstName.style.borderColor = 'red';
+//     }
+//     else if (secondName.value == 0){
+//         document.querySelector('.second-name-error').innerHTML = 'Second Name Is Required';
+//         secondName.style.borderColor = 'red';
+//     }
+//     else if(isNaN(phonenumber.value)){
+//         phonenumber.style.borderColor = 'red';
+//         document.querySelector('.Phone-number-error').innerHTML = 'Enter Numeric Value Only';
+//     }
+//     else if(phonenumber.value.length = 0){
+//         phonenumber.style.borderColor = 'red';
+//         document.querySelector('.Phone-number-error').innerHTML = 'Phone Number Required';
+//     }
+//     else if(phonenumber.value.length < 9){
+//         phonenumber.style.borderColor = 'red';
+//         document.querySelector('.Phone-number-error').innerHTML = 'Number Must Be Ten Characters Long';
+//     }
+//     else if (password.value == 0){
+//         phonenumber.style.borderColor = 'red';
+//         document.querySelector('.password-error').innerHTML = 'Password Required';
+//     }
+//     else{RegisterBTN.addEventListener('click',function(){
+//         if(password.value == confirmPassword.value){
+//            return true;
+//         }
+//         else{
+//             confirmError.innerHTML = 'Password must be the same';
+//             confirmPassword.style.borderColor = 'red'
+//             return false;
+//         }
+//         });
+//     }
+// });
 // a graph to show the recent data transmitted
 $(document).ready(function() {
 $.ajax({
@@ -258,4 +259,119 @@ fetch("network_data.csv")
     tableHTML += "</tr>";
     }
     table.innerHTML = tableHTML;
+});
+// uncheck one option if one is checked
+
+const radiobutton1 = document.querySelector("#radiobtn1");
+const radiobutton2 = document.querySelector("#radiobtn2");
+
+
+radiobutton1.addEventListener("click", function() {
+if (this.checked) {
+    radiobutton2.checked = false;
+    
+}
+});
+
+radiobutton2.addEventListener("click", function() {
+if (this.checked) {
+    radiobutton1.checked = false;
+  
+}
+});
+
+// display send money and hide
+const revealSendMoney = document.querySelector('.send-money-btn');
+const sendMoneyBox = document.querySelector('.send-money');
+
+revealSendMoney.addEventListener('click', function(){
+    sendMoneyBox.style.display = 'block';
+    revealSideBar.style.display = 'none'
+    hideSendMoneyIcon.style.display = 'block'
+});
+// hide side money box
+const hideSendMoneyIcon = document.querySelector('#close-sendmoney');
+
+hideSendMoneyIcon.addEventListener('click', function(){
+    function showNextDiv() {
+        sendMoneyBox.style.display = 'none';
+        hideSendMoneyIcon.style.display = 'none'
+      }
+    showNextDiv();
+});
+
+
+
+// counter balance 
+
+
+const balanceCounter = document.querySelector("#available-bal-counter");
+const countbalvalue = parseInt(balanceCounter.getAttribute("bal-count"), 10);
+const duration = 2000; // in milliseconds
+const step1 = Math.ceil(countbalvalue / (duration / 10)); 
+
+let currentnumber = 0;
+
+function balCounter() {
+    intervalId = setInterval(() => {
+        currentnumber  += step1;
+      if (currentnumber  >= countbalvalue) {
+        currentnumber  = countbalvalue;
+        clearInterval(intervalId);
+      }
+      balanceCounter.textContent = currentnumber + '.00';
+    }, 10);
+}
+
+const virtualCounter = document.querySelector("#virtual-bal-counter");
+const virtualbalvalue = parseInt(virtualCounter.getAttribute("virtual-count"), 10);
+const step2 = Math.ceil(virtualbalvalue / (duration / 10)); 
+
+let Value = 0;
+
+function virtualCounterFunction() {
+    intervalId = setInterval(() => {
+      Value += step2;
+      if (Value >= virtualbalvalue) {
+        Value = virtualbalvalue;
+        clearInterval(intervalId);
+      }
+      virtualCounter.textContent = Value + '.00';
+    }, 5);
+}
+
+const numberCounter = document.querySelector("#number-counter");
+const countValue = parseInt(numberCounter.getAttribute("data-count"), 10);
+const step = Math.ceil(countValue / (duration / 10)); // increase value by this amount every 10ms
+
+let currentValue = 0;
+
+function startCounting() {
+  intervalId = setInterval(() => {
+    currentValue += step;
+    if (currentValue >= countValue) {
+      currentValue = countValue;
+      clearInterval(intervalId);
+      startBtn.style.display = "block";
+      loadingCircle.style.display = "none";
+    }
+    numberCounter.textContent = currentValue + 'USD';
+  }, 10);
+}
+
+// refresh animation
+
+const startBtn = document.getElementById("start-refresh-btn");
+const loadingCircle = document.querySelector(".loading-circle");
+
+startBtn.addEventListener("click", () => {
+  startBtn.style.display = "none";
+  loadingCircle.style.display = "block";
+  loadingCircle.classList.add("rotate");
+  setTimeout(() => {
+    loadingCircle.classList.remove("rotate");
+    startCounting();
+    balCounter() 
+    virtualCounterFunction()
+  }, 5000);
 });

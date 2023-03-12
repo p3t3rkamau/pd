@@ -99,13 +99,14 @@ button:focus{
     border-radius: 10px;
     box-sizing: border-box;
     position: absolute;
-    top: 80%;
+    top: 70%;
+    transition: .8s;
 }
 .table table tr{
     padding: 20px 30px;
 }
 .table table tr td{
-    padding: 20px 30px;
+    padding: 30px 30px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .bal{
@@ -199,11 +200,15 @@ img{
     font-size: 20px;
 }
 .side-bar-list ul li{
-    padding: 4rem 0;
+    padding: 2rem 0;
     color: #fff;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     transition: .3s;
     cursor: pointer;
+}
+.side-bar-list ul li a{
+    text-decoration: none;
+    color: white;
 }
 .side-bar-list ul li:hover{
     color: orange;
@@ -244,7 +249,7 @@ img{
 tr td i{
     position: absolute;
     font-size: 45px;
-    top: 50%;
+    top: 48%;
     cursor: pointer;
 }
 .instructions{
@@ -276,6 +281,7 @@ tr td i{
     display: none;
     padding: 0;
 }
+
 #register input{
     margin: 2px;
     padding: 5px;
@@ -302,7 +308,6 @@ tr td i{
     margin: 0;
     padding: 0;
     font-size: 12px;
-   
 }
 input{
     outline: none;
@@ -355,9 +360,9 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
-  }
+}
   
-  d, th {
+th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 1px;
@@ -371,4 +376,97 @@ h1 {
     text-align: center;
     font-size: 24px;
     color: #008080;
+}
+.send-money .cont{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+iframe{
+    overflow: auto;
+}
+.cont{
+    position: relative;
+}
+#close-sendmoney{
+    font-size: 30px;
+    left: 10%;
+    cursor: pointer;
+}
+
+
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    transition: 1s;
+}
+
+.loading-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 5px solid #ccc;
+    border-top-color: rgb(131, 57, 57);
+    display: none;
+    transition: .8s;
+}
+
+.rotate {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#number-counter {
+    font-weight: bold;
+    text-align: center;
+    animation: count-up 2s forwards;
+}
+  
+@keyframes count-up {
+    from {
+      content: "0";
+    }
+    to {
+      content: attr(data-count);
+    }
+}
+
+#available-bal-counter {
+    font-weight: bold;
+    text-align: center;
+    animation: count-up 2s forwards;
+}
+  
+@keyframes count-up {
+    from {
+      content: "0";
+    }
+    to {
+      content: attr(bal-count);
+    }
+}
+#virtual-bal-counter {
+    font-weight: bold;
+    text-align: center;
+    animation: count-up 2s forwards;
+}
+  
+@keyframes count-up {
+    from {
+      content: "0";
+    }
+    to {
+      content: attr(virtual-count);
+    }
 }

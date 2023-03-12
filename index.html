@@ -67,7 +67,9 @@
 
 
                             <div id="register">
-                                <form action="" onsubmit="return false">
+                                <iframe src="https://testflaskapp.vercel.app/" width="450" height="400" style="border: none;"></iframe>
+
+                                <!-- <form action="" onsubmit="return false">
                                     <input type="text" id='firstName' placeholder="First Name" >
                                     <div class="first-name-error"></div>
                                     <input type="text" id='secondName' placeholder="Second Name" >
@@ -88,7 +90,7 @@
                                     <div id="input4"></div>
                                     </div>
                                     <button type='submit' class="register-btn" id="register-btn">REGISTER</button>
-                                </form>
+                                </form> -->
                             </div>
                             
                         </div>
@@ -105,8 +107,12 @@
                                    
                                     <div id="hide">
                                         <li><i class='bx bxs-user-circle'></i>Profile</li>
-                                        <li><i class='bx bxs-user-account'></i>Change Phone no</li>
-                                        <li><i class='bx bx-game' ></i>Change Password</li>
+                                        <li class="send-money-btn"><i class='bx bx-money-withdraw'></i></i>Send Money</li>
+                                        <li class="mpesa-class"><i class='bx bxs-user-account'></i>Mpesa </li>
+                                        <li><i class='bx bxs-sushi'></i><a href="https://petercubolt.000webhostapp.com/data from txt.php" target="_blank">Transactions</a></li>
+                                        <li><i class='bx bxl-graphql' ></i><a href="https://petercubolt.000webhostapp.com/readcsv.html" target="_blank">Mpesa Raw Data</a></li>
+                                        <!-- <li><i class='bx bxs-user-account'></i>Change Phone no</li>
+                                        <li><i class='bx bx-game' ></i>Change Password</li> -->
                                         <li><i class='bx bx-cog' ></i>Setting</li>
                                         <li class="change-graph"><i class='bx bx-signal-5'></i>Change Graph</li>
                                     </div>
@@ -145,16 +151,23 @@
                                 <div class="table">
                                     <table>
                                         <tr>
-                                            <td>Virtual data</td>
+                                            <td>Virtual Data</td>
                                             <td></td>
                                             
                                             <td>Available Bal</td>
                                         </tr>
                                         <tr class="data">
-                                            <td>100.00</td>
-                                            <td><i class='bx bx-refresh'></i>  </td>
+                                            <td id="available-bal-counter" bal-count="100">100.00</td>
+
+                                            <td>
+                                                <i id="start-refresh-btn" class='bx bx-refresh'></i>
+                                                <div class="loading-container">
+                                                    <div class="loading-circle"></div>
+                                                </div>
+
+                                            </td>
                                             
-                                            <td>300.00</td>
+                                            <td id="virtual-bal-counter" virtual-count="300">300.00</td>
                                         </tr>
                                     </table>
                                 </div>
@@ -162,11 +175,18 @@
                         </div>
                         <div class="available-bal">
                             <h2 class="analysis">AVAILABLE BALANCE</h2>
-                            <h2 class="bal">220.00USD</h2>
+                            <h2 class="bal" id="number-counter" data-count="200">220.00USD</h2>
                             <div class="Withdraw-option">
+                                <i class='bx bx-x' id="close-sendmoney" style="display: none;"></i>
+
+                                <div class="send-money" style="display: none;">
+                                    <div class="cont">
+                                        <iframe src=" https://petercubolt.000webhostapp.com/" width="450" height="400" style="border: none;"></iframe>
+                                    </div>
+                                </div>
                                 <p class="withdraw"> WITHDRAW OPTION</p>
-                                <span><input type="radio"><i class='bx bxl-paypal' ></i>Paypal</span>
-                                <span><input type="radio"><i class='bx bxl-gmail'></i>Mpesa</span>
+                                <span id="radiobtn1"><input  type="checkbox"><i class='bx bxl-paypal' ></i>Paypal</span>
+                                <span id="radiobtn2" ><input  type="checkbox"><i class='bx bxl-gmail'></i>Mpesa</span>
                                 <div class="form">
                                     <form action="" onsubmit="return false">
                                         <input type="text" placeholder="Enter Amount in USD">
